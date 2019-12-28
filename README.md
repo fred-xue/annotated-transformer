@@ -16,16 +16,16 @@ python -m spacy download en
 python -m spacy download de
 ```
 
-Then, you *should* be able to `Run All` cells in one pass without any error.
+Then, `Run All` cells *should* work in one pass without any error.
 
 ## Changes
 
 The code differs from the original Annotated Transformer in the following ways:
 * Runs on PyTorch 1.3 (original code was for version 0.3);
-* As the original en-de OpenNMT doesn't load in recent versions of PyTorch, the last part of the notebook (analysis of attention weights, etc.) uses an IWSLT rather than WMT model;
+* As the original en-de OpenNMT doesn't load in recent versions of PyTorch, the last part of the notebook (attention visualization, etc.) uses an IWSLT rather than WMT model;
 * Removed some deprecations when possible;
 * Fixed seed for reproducibility;
-* Decoding with different examples.
+* Decoding with slightly more difficult examples.
 
 Detailed changes are listed in `annotated_transformer.nbdiff`.
 
