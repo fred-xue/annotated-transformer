@@ -22,7 +22,10 @@ The code differs from the original Annotated Transformer in the following ways:
 * Runs on PyTorch 1.3 (original code was for version 0.3);
 * As the original en-de OpenNMT doesn't load in recent versions of PyTorch, the last part of the notebook (analysis of attention weights, etc.) uses an IWSLT rather than WMT model;
 * Removed some deprecations when possible.
-* Switched to more 
+* Fixed seed for reproducibility.
+* Decoding with different examples.
+
+Detailed changes are listed in `annotated_transformer.nbdiff`.
 
 ## Credit
 
