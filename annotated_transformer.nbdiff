@@ -1,6 +1,6 @@
-nbdiff old.ipynb new.ipynb
---- old.ipynb  2019-12-27 22:39:51.251570
-+++ new.ipynb  2019-12-27 22:25:37.961525
+nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
+--- annotated_transformer_original.ipynb  2019-12-27 22:34:48.866488
++++ annotated_transformer.ipynb  2019-12-28 01:25:11.835613
 ## replaced /cells/0/execution_count:
 -  3
 +  1
@@ -41,10 +41,11 @@ nbdiff old.ipynb new.ipynb
  import numpy as np
  import torch
  import torch.nn as nn
-@@ -6,5 +7,14 @@ import math, copy, time
+@@ -6,5 +7,15 @@ import math, copy, time
  from torch.autograd import Variable
  import matplotlib.pyplot as plt
  import seaborn
++import spacy
 +import warnings
 +
  seaborn.set_context(context="talk")
@@ -456,15 +457,15 @@ nbdiff old.ipynb new.ipynb
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Epoch Step: 1 Loss: 3.285327 Tokens per Sec: 379.242889
-+      Epoch Step: 1 Loss: 1.964567 Tokens per Sec: 798.818115
++      Epoch Step: 1 Loss: 3.285327 Tokens per Sec: 699.417236
++      Epoch Step: 1 Loss: 1.964522 Tokens per Sec: 1381.855957
 +      Epoch 0: tensor(1.9709, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.903321 Tokens per Sec: 550.997864
-+      Epoch Step: 1 Loss: 1.675612 Tokens per Sec: 804.698669
-+      Epoch 1: tensor(1.6869, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.866236 Tokens per Sec: 578.383606
-+      Epoch Step: 1 Loss: 1.453465 Tokens per Sec: 821.920410
-+      Epoch 2: tensor(1.3937, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.903320 Tokens per Sec: 812.383423
++      Epoch Step: 1 Loss: 1.675429 Tokens per Sec: 1399.757690
++      Epoch 1: tensor(1.6866, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.866234 Tokens per Sec: 942.878845
++      Epoch Step: 1 Loss: 1.452893 Tokens per Sec: 1789.096191
++      Epoch 2: tensor(1.3933, grad_fn=<DivBackward0>)
 +      training done
 
 ## deleted /cells/83/outputs/0:
@@ -580,14 +581,14 @@ nbdiff old.ipynb new.ipynb
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Data loading, with expected run time: 5-10 minutes...
++      Loading data...
 
 ## modified /cells/89/source:
 @@ -1,11 +1,11 @@
  # For data loading.
  from torchtext import data, datasets
 -
-+print("Data loading, with expected run time: 5-10 minutes...")
++print("Loading data...")
  if True:
      import spacy
      spacy_de = spacy.load('de')
@@ -665,7 +666,7 @@ nbdiff old.ipynb new.ipynb
 +    name: stdout
 +    text:
 +      Source:	Es kostet übrigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen . 
-+      Translation:	It costs 300 dollars to actually study the neurologic section in the neurological record . 
++      Translation:	It costs 300 dollars , by the way , to look at the park . 
 +      Target:	Takes about $ 300 , by the way , in the neurologist 's clinic to do it . 
 
 ## deleted /cells/102/outputs/0:
@@ -780,7 +781,7 @@ nbdiff old.ipynb new.ipynb
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Translation:	<s> It costs 300 dollars to actually study the neurologic section in the neurological record . 
++      Translation:	<s> It costs 300 dollars , by the way , to look at the park . 
 
 ## deleted /cells/118/outputs/0:
 -  output:
@@ -823,7 +824,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=042b78c4a3180ea2...>
++      image/png: iVBORw0K...<snip base64, md5=8cd0a05e425a2753...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -839,7 +840,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=de2ff377b5a11a1b...>
++      image/png: iVBORw0K...<snip base64, md5=7068926e9bf16624...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -855,7 +856,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=2dcfbf14a33c3023...>
++      image/png: iVBORw0K...<snip base64, md5=e3d0c1fda3d7f1d6...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -871,7 +872,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=c53ce71e416d8c50...>
++      image/png: iVBORw0K...<snip base64, md5=f185d898b3e3621e...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -887,7 +888,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=f60229aa7ac529f0...>
++      image/png: iVBORw0K...<snip base64, md5=41352adb0636a5f6...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -903,7 +904,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=77b3844359bf7711...>
++      image/png: iVBORw0K...<snip base64, md5=5c1ba038d68ba5d4...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -919,7 +920,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=d90d68339a3cd29c...>
++      image/png: iVBORw0K...<snip base64, md5=6fa3e8849abf4863...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -935,7 +936,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=64566ef405bc3e01...>
++      image/png: iVBORw0K...<snip base64, md5=1df043eaf3488669...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -951,7 +952,7 @@ nbdiff old.ipynb new.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=bd49c1405b66f0e0...>
++      image/png: iVBORw0K...<snip base64, md5=67f82de82f383e47...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
