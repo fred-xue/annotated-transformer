@@ -1,7 +1,9 @@
 ## Code for The Annotated Transformer:
 http://nlp.seas.harvard.edu/2018/04/03/attention.html
 
-Authors: Alexander Rush (@harvardnlp or srush@seas.harvard.edu), with help from Vincent Nguyen and Guillaume Klein. Modified by Michel Galley to make it work with PyTorch 1.3.
+Authors: Alexander Rush (@harvardnlp or srush@seas.harvard.edu), with help from Vincent Nguyen and Guillaume Klein. 
+
+Modified by Michel Galley to make it work with PyTorch 1.3.
 
 ## Setup
 
@@ -21,8 +23,8 @@ Then, you *should* be able to `Run All` cells in one pass without any error.
 The code differs from the original Annotated Transformer in the following ways:
 * Runs on PyTorch 1.3 (original code was for version 0.3);
 * As the original en-de OpenNMT doesn't load in recent versions of PyTorch, the last part of the notebook (analysis of attention weights, etc.) uses an IWSLT rather than WMT model;
-* Removed some deprecations when possible.
-* Fixed seed for reproducibility.
+* Removed some deprecations when possible;
+* Fixed seed for reproducibility;
 * Decoding with different examples.
 
 Detailed changes are listed in `annotated_transformer.nbdiff`.
