@@ -2,4 +2,4 @@ Code for The Annotated Transformer blog post:
 
 http://nlp.seas.harvard.edu/2018/04/03/attention.html
 
-Version updated to work with PyTorch 1.3.
+Version updated to work with PyTorch 1.3. Run setup.sh running notebook.
