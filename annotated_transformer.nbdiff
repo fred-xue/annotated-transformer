@@ -1,0 +1,1006 @@
+nbdiff old.ipynb new.ipynb
+--- old.ipynb  2019-12-27 22:39:51.251570
++++ new.ipynb  2019-12-27 22:25:37.961525
+## replaced /cells/0/execution_count:
+-  3
++  1
+
+## inserted before /cells/0/outputs/0:
++  output:
++    output_type: execute_result
++    execution_count: 1
++    data:
++      image/png: iVBORw0K...<snip base64, md5=4f257a01654e5402...>
++      text/plain: <IPython.core.display.Image object>
+
+## deleted /cells/0/outputs/0:
+-  output:
+-    output_type: execute_result
+-    execution_count: 3
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=1bf222a30ed0d615...>
+-      text/plain: <IPython.core.display.Image object>
+
+## replaced /cells/3/execution_count:
+-  1
++  2
+
+## deleted /cells/3/metadata/collapsed:
+-  True
+
+## replaced /cells/4/execution_count:
+-  2
++  3
+
+## deleted /cells/4/metadata/collapsed:
+-  True
+
+## modified /cells/4/source:
+@@ -1,3 +1,4 @@
++import sys
+ import numpy as np
+ import torch
+ import torch.nn as nn
+@@ -6,5 +7,14 @@ import math, copy, time
+ from torch.autograd import Variable
+ import matplotlib.pyplot as plt
+ import seaborn
++import warnings
++
+ seaborn.set_context(context="talk")
++warnings.filterwarnings('ignore')
++
++np.random.seed(0)
++torch.manual_seed(0)
++torch.backends.cudnn.deterministic = True
++torch.backends.cudnn.benchmark = False
++
+ %matplotlib inline
+
+
+## replaced /cells/11/execution_count:
+-  3
++  4
+
+## deleted /cells/11/metadata/collapsed:
+-  True
+
+## replaced /cells/12/execution_count:
+-  4
++  5
+
+## deleted /cells/12/metadata/collapsed:
+-  True
+
+## replaced /cells/14/execution_count:
+-  4
++  6
+
+## inserted before /cells/14/outputs/0:
++  output:
++    output_type: execute_result
++    execution_count: 6
++    data:
++      image/png: iVBORw0K...<snip base64, md5=b6d7ce73061b590c...>
++      text/plain: <IPython.core.display.Image object>
+
+## deleted /cells/14/outputs/0:
+-  output:
+-    output_type: execute_result
+-    execution_count: 4
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=8620f4888027994d...>
+-      text/plain: <IPython.core.display.Image object>
+
+## replaced /cells/16/execution_count:
+-  5
++  7
+
+## deleted /cells/16/metadata/collapsed:
+-  True
+
+## replaced /cells/17/execution_count:
+-  6
++  8
+
+## deleted /cells/17/metadata/collapsed:
+-  True
+
+## replaced /cells/19/execution_count:
+-  7
++  9
+
+## deleted /cells/19/metadata/collapsed:
+-  True
+
+## replaced /cells/21/execution_count:
+-  8
++  10
+
+## deleted /cells/21/metadata/collapsed:
+-  True
+
+## replaced /cells/23/execution_count:
+-  9
++  11
+
+## deleted /cells/23/metadata/collapsed:
+-  True
+
+## replaced /cells/25/execution_count:
+-  10
++  12
+
+## deleted /cells/25/metadata/collapsed:
+-  True
+
+## replaced /cells/27/execution_count:
+-  11
++  13
+
+## deleted /cells/27/metadata/collapsed:
+-  True
+
+## replaced /cells/29/execution_count:
+-  12
++  14
+
+## deleted /cells/29/metadata/collapsed:
+-  True
+
+## replaced /cells/31/execution_count:
+-  13
++  15
+
+## inserted before /cells/31/outputs/0:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=226c1a3996fe048c...>
++      text/plain: <Figure size 360x360 with 1 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/31/outputs/0:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=0b290771c627b0e4...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b0600844ef0>
+
+## modified /cells/31/source:
+@@ -1,4 +1,3 @@
+-
+ plt.figure(figsize=(5,5))
+ plt.imshow(subsequent_mask(20)[0])
+ None
+
+
+## replaced /cells/33/execution_count:
+-  8
++  16
+
+## inserted before /cells/33/outputs/0:
++  output:
++    output_type: execute_result
++    execution_count: 16
++    data:
++      image/png: iVBORw0K...<snip base64, md5=23e37782c07e8207...>
++      text/plain: <IPython.core.display.Image object>
+
+## deleted /cells/33/outputs/0:
+-  output:
+-    output_type: execute_result
+-    execution_count: 8
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=f513130e219549ef...>
+-      text/plain: <IPython.core.display.Image object>
+
+## replaced /cells/35/execution_count:
+-  14
++  17
+
+## deleted /cells/35/metadata/collapsed:
+-  True
+
+## replaced /cells/38/execution_count:
+-  6
++  18
+
+## inserted before /cells/38/outputs/0:
++  output:
++    output_type: execute_result
++    execution_count: 18
++    data:
++      image/png: iVBORw0K...<snip base64, md5=895b95cec46aa6cc...>
++      text/plain: <IPython.core.display.Image object>
+
+## deleted /cells/38/outputs/0:
+-  output:
+-    output_type: execute_result
+-    execution_count: 6
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=121e6ce70c0f6c2a...>
+-      text/plain: <IPython.core.display.Image object>
+
+## replaced /cells/40/execution_count:
+-  15
++  19
+
+## deleted /cells/40/metadata/collapsed:
+-  True
+
+## replaced /cells/43/execution_count:
+-  16
++  20
+
+## deleted /cells/43/metadata/collapsed:
+-  True
+
+## replaced /cells/45/execution_count:
+-  17
++  21
+
+## deleted /cells/45/metadata/collapsed:
+-  True
+
+## replaced /cells/47/execution_count:
+-  18
++  22
+
+## deleted /cells/47/metadata/collapsed:
+-  True
+
+## replaced /cells/49/execution_count:
+-  19
++  23
+
+## inserted before /cells/49/outputs/0:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=85d1a859a16b04e1...>
++      text/plain: <Figure size 1080x360 with 1 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/49/outputs/0:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=c948f4ce025ff1d1...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b06029f8d68>
+
+## replaced /cells/52/execution_count:
+-  20
++  24
+
+## deleted /cells/52/metadata/collapsed:
+-  True
+
+## modified /cells/52/source:
+@@ -17,5 +17,5 @@ def make_model(src_vocab, tgt_vocab, N=6,
+     # Initialize parameters with Glorot / fan_avg.
+     for p in model.parameters():
+         if p.dim() > 1:
+-            nn.init.xavier_uniform(p)
++            nn.init.xavier_uniform_(p)
+     return model
+
+
+## replaced /cells/53/execution_count:
+-  21
++  25
+
+## deleted /cells/53/metadata/collapsed:
+-  True
+
+## replaced /cells/57/execution_count:
+-  22
++  26
+
+## deleted /cells/57/metadata/collapsed:
+-  True
+
+## replaced /cells/60/execution_count:
+-  23
++  27
+
+## deleted /cells/60/metadata/collapsed:
+-  True
+
+## replaced /cells/63/execution_count:
+-  24
++  28
+
+## deleted /cells/63/metadata/collapsed:
+-  True
+
+## replaced /cells/67/execution_count:
+-  25
++  29
+
+## deleted /cells/67/metadata/collapsed:
+-  True
+
+## modified /cells/67/source:
+@@ -1,4 +1,3 @@
+-
+ class NoamOpt:
+     "Optim wrapper that implements rate."
+     def __init__(self, model_size, factor, warmup, optimizer):
+
+## replaced /cells/69/execution_count:
+-  26
++  30
+
+## inserted before /cells/69/outputs/0:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=407c73eeb7be30f7...>
++      text/plain: <Figure size 432x288 with 1 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/69/outputs/0:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=ed954b83326e2558...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b060c9f0898>
+
+## replaced /cells/72/execution_count:
+-  27
++  31
+
+## deleted /cells/72/metadata/collapsed:
+-  True
+
+## replaced /cells/74/execution_count:
+-  28
++  32
+
+## inserted before /cells/74/outputs/0:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=6d5e47ce7086d167...>
++      text/plain: <Figure size 432x288 with 1 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/74/outputs/0:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=f2e18ef89b5bb0df...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b060c338cc0>
+
+## replaced /cells/76/execution_count:
+-  29
++  33
+
+## inserted before /cells/76/outputs/0:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=da5b01866e3775ff...>
++      text/plain: <Figure size 432x288 with 1 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/76/outputs/0:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=90c8caa76f6d935d...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b060c321128>
+
+## modified /cells/76/source:
+@@ -4,7 +4,9 @@ def loss(x):
+     predict = torch.FloatTensor([[0, x / d, 1 / d, 1 / d, 1 / d],
+                                  ])
+     #print(predict)
++    #return crit(Variable(predict.log()),
++    #             Variable(torch.LongTensor([1]))).data[0]
+     return crit(Variable(predict.log()),
+-                 Variable(torch.LongTensor([1]))).data[0]
++                 Variable(torch.LongTensor([1])))
+ plt.plot(np.arange(1, 100), [loss(x) for x in range(1, 100)])
+ None
+
+
+## replaced /cells/79/execution_count:
+-  30
++  34
+
+## deleted /cells/79/metadata/collapsed:
+-  True
+
+## modified /cells/79/source:
+@@ -1,7 +1,7 @@
+ def data_gen(V, batch, nbatches):
+     "Generate random data for a src-tgt copy task."
+     for i in range(nbatches):
+-        data = torch.from_numpy(np.random.randint(1, V, size=(batch, 10)))
++        data = torch.from_numpy(np.random.randint(1, V, size=(batch, 10))).long()
+         data[:, 0] = 1
+         src = Variable(data, requires_grad=False)
+         tgt = Variable(data, requires_grad=False)
+
+## replaced /cells/81/execution_count:
+-  31
++  35
+
+## deleted /cells/81/metadata/collapsed:
+-  True
+
+## modified /cells/81/source:
+@@ -13,4 +13,5 @@ class SimpleLossCompute:
+         if self.opt is not None:
+             self.opt.step()
+             self.opt.optimizer.zero_grad()
+-        return loss.data[0] * norm
+
++        return loss * norm
++        #return loss.data[0] * norm
+
+
+## replaced /cells/83/execution_count:
+-  32
++  36
+
+## inserted before /cells/83/outputs/0:
++  output:
++    output_type: stream
++    name: stdout
++    text:
++      Epoch Step: 1 Loss: 3.285327 Tokens per Sec: 379.242889
++      Epoch Step: 1 Loss: 1.964567 Tokens per Sec: 798.818115
++      Epoch 0: tensor(1.9709, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.903321 Tokens per Sec: 550.997864
++      Epoch Step: 1 Loss: 1.675612 Tokens per Sec: 804.698669
++      Epoch 1: tensor(1.6869, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.866236 Tokens per Sec: 578.383606
++      Epoch Step: 1 Loss: 1.453465 Tokens per Sec: 821.920410
++      Epoch 2: tensor(1.3937, grad_fn=<DivBackward0>)
++      training done
+
+## deleted /cells/83/outputs/0:
+-  output:
+-    output_type: stream
+-    name: stdout
+-    text:
+-      Epoch Step: 1 Loss: 3.023465 Tokens per Sec: 403.074173
+-      Epoch Step: 1 Loss: 1.920030 Tokens per Sec: 641.689380
+-      1.9274832487106324
+-      Epoch Step: 1 Loss: 1.940011 Tokens per Sec: 432.003378
+-      Epoch Step: 1 Loss: 1.699767 Tokens per Sec: 641.979665
+-      1.657595729827881
+-      Epoch Step: 1 Loss: 1.860276 Tokens per Sec: 433.320240
+-      Epoch Step: 1 Loss: 1.546011 Tokens per Sec: 640.537198
+-      1.4888023376464843
+-      Epoch Step: 1 Loss: 1.682198 Tokens per Sec: 432.092305
+-      Epoch Step: 1 Loss: 1.313169 Tokens per Sec: 639.441857
+-      1.3485562801361084
+-      Epoch Step: 1 Loss: 1.278768 Tokens per Sec: 433.568756
+-      Epoch Step: 1 Loss: 1.062384 Tokens per Sec: 642.542067
+-      0.9853351473808288
+-      Epoch Step: 1 Loss: 1.269471 Tokens per Sec: 433.388727
+-      Epoch Step: 1 Loss: 0.590709 Tokens per Sec: 642.862135
+-      0.5686767101287842
+-      Epoch Step: 1 Loss: 0.997076 Tokens per Sec: 433.009746
+-      Epoch Step: 1 Loss: 0.343118 Tokens per Sec: 642.288427
+-      0.34273059368133546
+-      Epoch Step: 1 Loss: 0.459483 Tokens per Sec: 434.594030
+-      Epoch Step: 1 Loss: 0.290385 Tokens per Sec: 642.519464
+-      0.2612409472465515
+-      Epoch Step: 1 Loss: 1.031042 Tokens per Sec: 434.557008
+-      Epoch Step: 1 Loss: 0.437069 Tokens per Sec: 643.630322
+-      0.4323212027549744
+-      Epoch Step: 1 Loss: 0.617165 Tokens per Sec: 436.652626
+-      Epoch Step: 1 Loss: 0.258793 Tokens per Sec: 644.372296
+-      0.27331129014492034
+
+## modified /cells/83/source:
+@@ -1,14 +1,17 @@
+ # Train the simple copy task.
+ V = 11
++N = 3 # 3 epochs is more than enough for synthetic data
+ criterion = LabelSmoothing(size=V, padding_idx=0, smoothing=0.0)
+ model = make_model(V, V, N=2)
+ model_opt = NoamOpt(model.src_embed[0].d_model, 1, 400,
+         torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
+ 
+-for epoch in range(10):
++for epoch in range(N):
+     model.train()
+     run_epoch(data_gen(V, 30, 20), model, 
+               SimpleLossCompute(model.generator, criterion, model_opt))
+     model.eval()
+-    print(run_epoch(data_gen(V, 30, 5), model, 
+-                    SimpleLossCompute(model.generator, criterion, None)))
+
++    print("Epoch %d: %s" % (epoch, run_epoch(data_gen(V, 30, 5), model, 
++                    SimpleLossCompute(model.generator, criterion, None))))
++
++print('training done')
+
+
+## replaced /cells/85/execution_count:
+-  33
++  37
+
+## inserted before /cells/85/outputs/0:
++  output:
++    output_type: stream
++    name: stdout
++    text:
++      tensor([[ 1,  3,  5,  9, 10,  7,  6,  8, 10,  2]])
+
+## deleted /cells/85/outputs/0:
+-  output:
+-    output_type: stream
+-    name: stdout
+-    text:
+-      
+-          1     2     3     4     5     6     7     8     9    10
+-      [torch.LongTensor of size 1x10]
+-      
+
+## modified /cells/85/source:
+@@ -14,6 +14,7 @@ def greedy_decode(model, src, src_mask, max_len, start_symbol):
+     return ys
+ 
+ model.eval()
+-src = Variable(torch.LongTensor([[1,2,3,4,5,6,7,8,9,10]]) )
++#src = Variable(torch.LongTensor([[1,2,3,4,5,6,7,8,9,10]]) )
++src = Variable(torch.LongTensor([[1,3,5,7,9,10,8,6,4,2]]) )
+ src_mask = Variable(torch.ones(1, 1, 10) )
+ print(greedy_decode(model, src, src_mask, max_len=10, start_symbol=1))
+
+
+## replaced /cells/87/execution_count:
+-  34
++  38
+
+## deleted /cells/87/metadata/collapsed:
+-  True
+
+## replaced /cells/89/execution_count:
+-  42
++  39
+
+## deleted /cells/89/metadata/collapsed:
+-  True
+
+## inserted before /cells/89/outputs/0:
++  output:
++    output_type: stream
++    name: stdout
++    text:
++      Data loading, with expected run time: 5-10 minutes...
+
+## modified /cells/89/source:
+@@ -1,11 +1,11 @@
+ # For data loading.
+ from torchtext import data, datasets
+-
++print("Data loading, with expected run time: 5-10 minutes...")
+ if True:
+     import spacy
+     spacy_de = spacy.load('de')
+     spacy_en = spacy.load('en')
+-
++    
+     def tokenize_de(text):
+         return [tok.text for tok in spacy_de.tokenizer(text)]
+ 
+
+## replaced /cells/92/execution_count:
+-  36
++  40
+
+## deleted /cells/92/metadata/collapsed:
+-  True
+
+## replaced /cells/94/execution_count:
+-  37
++  41
+
+## deleted /cells/94/metadata/collapsed:
+-  True
+
+## replaced /cells/96/execution_count:
+-  43
++  42
+
+## deleted /cells/96/metadata/collapsed:
+-  True
+
+## modified /cells/96/source:
+@@ -1,5 +1,5 @@
+-# GPUs to use
+-devices = [0, 1, 2, 3]
++#devices = [0, 1, 2, 3]
++devices = list(range(torch.cuda.device_count()))
+ if True:
+     pad_idx = TGT.vocab.stoi["<blank>"]
+     model = make_model(len(SRC.vocab), len(TGT.vocab), N=6)
+@@ -7,10 +7,10 @@ if True:
+     criterion = LabelSmoothing(size=len(TGT.vocab), padding_idx=pad_idx, smoothing=0.1)
+     criterion.cuda()
+     BATCH_SIZE = 12000
+-    train_iter = MyIterator(train, batch_size=BATCH_SIZE, device=0,
++    train_iter = MyIterator(train, batch_size=BATCH_SIZE, device=torch.device('cuda:0'),
+                             repeat=False, sort_key=lambda x: (len(x.src), len(x.trg)),
+                             batch_size_fn=batch_size_fn, train=True)
+-    valid_iter = MyIterator(val, batch_size=BATCH_SIZE, device=0,
++    valid_iter = MyIterator(val, batch_size=BATCH_SIZE, device=torch.device('cuda:0'),
+                             repeat=False, sort_key=lambda x: (len(x.src), len(x.trg)),
+                             batch_size_fn=batch_size_fn, train=False)
+     model_par = nn.DataParallel(model, device_ids=devices)
+
+## replaced /cells/99/execution_count:
+-  12
++  43
+
+## deleted /cells/99/metadata/collapsed:
+-  True
+
+## deleted /cells/100/metadata/collapsed:
+-  True
+
+## modified /cells/100/source:
+@@ -1,3 +1,4 @@
++# Turn on to retrain model:
+ if False:
+     model_opt = NoamOpt(model.src_embed[0].d_model, 1, 2000,
+             torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
+
+## inserted before /cells/102/outputs/0:
++  output:
++    output_type: stream
++    name: stdout
++    text:
++      Source:	Es kostet übrigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen . 
++      Translation:	It costs 300 dollars to actually study the neurologic section in the neurological record . 
++      Target:	Takes about $ 300 , by the way , in the neurologist 's clinic to do it . 
+
+## deleted /cells/102/outputs/0:
+-  output:
+-    output_type: stream
+-    name: stdout
+-    text:
+-      Translation:	<unk> <unk> . In my language , that means , thank you very much . 
+-      Target:	<unk> <unk> . It means in my language , thank you very much . 
+
+## modified /cells/102/source:
+@@ -1,8 +1,16 @@
++idx = 7
+ for i, batch in enumerate(valid_iter):
+-    src = batch.src.transpose(0, 1)[:1]
++    src = batch.src.transpose(0, 1)[idx:idx+1]
++    trg = batch.trg.transpose(0, 1)[idx:idx+1]
+     src_mask = (src != SRC.vocab.stoi["<blank>"]).unsqueeze(-2)
+-    out = greedy_decode(model, src, src_mask, 
++    out = greedy_decode(model, src.cuda(), src_mask.cuda(), 
+                         max_len=60, start_symbol=TGT.vocab.stoi["<s>"])
++    print("Source:", end="\t")
++    for i in range(0, src.size(1)):
++        sym = SRC.vocab.itos[src[0, i]]
++        if sym == "</s>": break
++        print(sym, end =" ")
++    print()
+     print("Translation:", end="\t")
+     for i in range(1, out.size(1)):
+         sym = TGT.vocab.itos[out[0, i]]
+@@ -10,8 +18,8 @@ for i, batch in enumerate(valid_iter):
+         print(sym, end =" ")
+     print()
+     print("Target:", end="\t")
+-    for i in range(1, batch.trg.size(0)):
+-        sym = TGT.vocab.itos[batch.trg.data[i, 0]]
++    for i in range(1, trg.size(1)):
++        sym = TGT.vocab.itos[trg[0, i]]
+         if sym == "</s>": break
+         print(sym, end =" ")
+     print()
+
+## replaced (type changed from NoneType to int) /cells/108/execution_count:
+-  None
++  46
+
+## deleted /cells/108/metadata/collapsed:
+-  True
+
+## replaced (type changed from NoneType to int) /cells/111/execution_count:
+-  None
++  47
+
+## deleted /cells/111/metadata/collapsed:
+-  True
+
+## replaced /cells/113/execution_count:
+-  10
++  48
+
+## inserted before /cells/113/outputs/0:
++  output:
++    output_type: execute_result
++    execution_count: 48
++    data:
++      image/png: iVBORw0K...<snip base64, md5=38a9eec7d545e076...>
++      text/plain: <IPython.core.display.Image object>
+
+## deleted /cells/113/outputs/0:
+-  output:
+-    output_type: execute_result
+-    execution_count: 10
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=e8672fa752728330...>
+-      text/plain: <IPython.core.display.Image object>
+
+## replaced (type changed from NoneType to int) /cells/115/execution_count:
+-  None
++  49
+
+## deleted /cells/115/metadata/collapsed:
+-  True
+
+## modified /cells/115/source:
+-  !wget https://s3.amazonaws.com/opennmt-models/en-de-model.pt
++  #!wget https://s3.amazonaws.com/opennmt-models/en-de-model.pt
+
+## inserted before /cells/116:
++  code cell:
++    execution_count: 50
++    source:
++      #model, SRC, TGT = torch.load("en-de-model.pt")
++      #Note: original OpenNMT doesn't load with recent pytorch, so using IWSLT model instead. 
+
+## deleted /cells/116-117:
+-  code cell:
+-    execution_count: 46
+-    metadata (known keys):
+-      collapsed: True
+-    source:
+-      model, SRC, TGT = torch.load("en-de-model.pt")
+-  code cell:
+-    metadata (known keys):
+-      collapsed: True
+
+## replaced /cells/118/execution_count:
+-  49
++  51
+
+## inserted before /cells/118/outputs/0:
++  output:
++    output_type: stream
++    name: stdout
++    text:
++      Translation:	<s> It costs 300 dollars to actually study the neurologic section in the neurological record . 
+
+## deleted /cells/118/outputs/0:
+-  output:
+-    output_type: stream
+-    name: stdout
+-    text:
+-      Translation:	<s> \u2581Die \u2581Protokoll datei \u2581kann \u2581 heimlich \u2581per \u2581E - Mail \u2581oder \u2581FTP \u2581an \u2581einen \u2581bestimmte n \u2581Empfänger \u2581gesendet \u2581werden . 
+
+## modified /cells/118/source:
+@@ -1,14 +1,16 @@
+ model.eval()
+-sent = "\u2581The \u2581log \u2581file \u2581can \u2581be \u2581sent \u2581secret ly \u2581with \u2581email \u2581or \u2581FTP \u2581to \u2581a \u2581specified \u2581receiver".split()
+-src = torch.LongTensor([[SRC.stoi[w] for w in sent]])
++#sent = "\u2581The \u2581log \u2581file \u2581can \u2581be \u2581sent \u2581secret ly \u2581with \u2581email \u2581or \u2581FTP \u2581to \u2581a \u2581specified \u2581receiver".split()
++sent = "Es kostet übrigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen .".split()
++src = torch.LongTensor([[SRC.vocab.stoi[w] for w in sent]])
++#print(src)
+ src = Variable(src)
+-src_mask = (src != SRC.stoi["<blank>"]).unsqueeze(-2)
+-out = greedy_decode(model, src, src_mask, 
+-                    max_len=60, start_symbol=TGT.stoi["<s>"])
++src_mask = (src != SRC.vocab.stoi["<blank>"]).unsqueeze(-2)
++out = greedy_decode(model, src.cuda(), src_mask.cuda(), 
++                    max_len=60, start_symbol=TGT.vocab.stoi["<s>"])
+ print("Translation:", end="\t")
+ trans = "<s> "
+ for i in range(1, out.size(1)):
+-    sym = TGT.itos[out[0, i]]
++    sym = TGT.vocab.itos[out[0, i]]
+     if sym == "</s>": break
+     trans += sym + " "
+ print(trans)
+
+
+## replaced /cells/120/execution_count:
+-  50
++  52
+
+## inserted before /cells/120/outputs/1:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=042b78c4a3180ea2...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/1:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=8dee25b096932a98...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b063c06df60>
+
+## inserted before /cells/120/outputs/3:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=de2ff377b5a11a1b...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/3:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=e5c2fa0f249748f6...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b0679e90b70>
+
+## inserted before /cells/120/outputs/5:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=2dcfbf14a33c3023...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/5:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=28d34ba57a21c37f...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b067a11a588>
+
+## inserted before /cells/120/outputs/7:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=c53ce71e416d8c50...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/7:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=3784e35a6ca92c84...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b063c06ddd8>
+
+## inserted before /cells/120/outputs/9:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=f60229aa7ac529f0...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/9:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=9a9b781861fa58ea...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b067a601b70>
+
+## inserted before /cells/120/outputs/11:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=77b3844359bf7711...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/11:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=d96bee64d9ab76e6...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b067a8de6a0>
+
+## inserted before /cells/120/outputs/13:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=d90d68339a3cd29c...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/13:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=435724594e293699...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b067a6f3a90>
+
+## inserted before /cells/120/outputs/15:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=64566ef405bc3e01...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/15:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=a02a73ce7b17ddca...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b066d711b70>
+
+## inserted before /cells/120/outputs/17:
++  output:
++    output_type: display_data
++    data:
++      image/png: iVBORw0K...<snip base64, md5=bd49c1405b66f0e0...>
++      text/plain: <Figure size 1440x720 with 4 Axes>
++    metadata (unknown keys):
++      needs_background: light
+
+## deleted /cells/120/outputs/17:
+-  output:
+-    output_type: display_data
+-    data:
+-      image/png: iVBORw0K...<snip base64, md5=1c72be5e61e4155c...>
+-      text/plain: <matplotlib.figure.Figure at 0x2b067a62e908>
+
+## modified /cells/120/source:
+@@ -3,25 +3,25 @@ def draw(data, x, y, ax):
+     seaborn.heatmap(data, 
+                     xticklabels=x, square=True, yticklabels=y, vmin=0.0, vmax=1.0, 
+                     cbar=False, ax=ax)
+-    
++
+ for layer in range(1, 6, 2):
+     fig, axs = plt.subplots(1,4, figsize=(20, 10))
+     print("Encoder Layer", layer+1)
+     for h in range(4):
+-        draw(model.encoder.layers[layer].self_attn.attn[0, h].data, 
++        draw(model.encoder.layers[layer].self_attn.attn[0, h].data.cpu(), 
+             sent, sent if h ==0 else [], ax=axs[h])
+     plt.show()
+-    
++
+ for layer in range(1, 6, 2):
+     fig, axs = plt.subplots(1,4, figsize=(20, 10))
+     print("Decoder Self Layer", layer+1)
+     for h in range(4):
+-        draw(model.decoder.layers[layer].self_attn.attn[0, h].data[:len(tgt_sent), :len(tgt_sent)], 
+-            tgt_sent, tgt_sent if h ==0 else [], ax=axs[h])
++        draw(model.decoder.layers[layer].self_attn.attn[0, h].data[:len(tgt_sent), :len(tgt_sent)].cpu(), 
++             tgt_sent, tgt_sent if h ==0 else [], ax=axs[h])
+     plt.show()
+     print("Decoder Src Layer", layer+1)
+     fig, axs = plt.subplots(1,4, figsize=(20, 10))
+     for h in range(4):
+-        draw(model.decoder.layers[layer].self_attn.attn[0, h].data[:len(tgt_sent), :len(sent)], 
+-            sent, tgt_sent if h ==0 else [], ax=axs[h])
+-    plt.show()
++        draw(model.decoder.layers[layer].self_attn.attn[0, h].data[:len(tgt_sent), :len(sent)].cpu(), 
++             sent, tgt_sent if h ==0 else [], ax=axs[h])
++    plt.show()
+
+
+## modified /metadata/language_info/version:
+-  3.5.2
++  3.7.5
+
