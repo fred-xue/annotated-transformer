@@ -1,6 +1,6 @@
 nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
---- annotated_transformer_original.ipynb  2019-12-27 22:34:48.866488
-+++ annotated_transformer.ipynb  2019-12-28 10:13:16.395703
+--- annotated_transformer_original.ipynb  2019-12-28 06:56:24.049919
++++ annotated_transformer.ipynb  2019-12-30 18:46:54.353133
 ## replaced /cells/0/execution_count:
 -  3
 +  1
@@ -457,37 +457,36 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Epoch Step: 1 Loss: 3.285327 Tokens per Sec: 268.022583
-+      Epoch Step: 1 Loss: 1.964567 Tokens per Sec: 774.751038
++      Epoch Step: 1 Loss: 3.285327 Tokens per Sec: 663.767944
++      Epoch Step: 1 Loss: 1.964522 Tokens per Sec: 1317.828491
 +      Epoch 0: tensor(1.9709, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.903321 Tokens per Sec: 535.160950
-+      Epoch Step: 1 Loss: 1.675612 Tokens per Sec: 819.369812
-+      Epoch 1: tensor(1.6869, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.866236 Tokens per Sec: 542.634033
-+      Epoch Step: 1 Loss: 1.453465 Tokens per Sec: 819.333374
-+      Epoch 2: tensor(1.3937, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.654531 Tokens per Sec: 558.108337
-+      Epoch Step: 1 Loss: 1.023988 Tokens per Sec: 813.122437
-+      Epoch 3: tensor(1.0248, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.297224 Tokens per Sec: 570.159851
-+      Epoch Step: 1 Loss: 0.684319 Tokens per Sec: 812.586304
-+      Epoch 4: tensor(0.6449, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 1.077481 Tokens per Sec: 547.405640
-+      Epoch Step: 1 Loss: 0.441100 Tokens per Sec: 807.657959
-+      Epoch 5: tensor(0.4249, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 0.765139 Tokens per Sec: 557.744812
-+      Epoch Step: 1 Loss: 0.361398 Tokens per Sec: 819.379028
-+      Epoch 6: tensor(0.3168, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 0.626656 Tokens per Sec: 541.207886
-+      Epoch Step: 1 Loss: 0.264631 Tokens per Sec: 785.439270
-+      Epoch 7: tensor(0.2361, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 0.715349 Tokens per Sec: 509.199768
-+      Epoch Step: 1 Loss: 0.214538 Tokens per Sec: 771.383606
-+      Epoch 8: tensor(0.2710, grad_fn=<DivBackward0>)
-+      Epoch Step: 1 Loss: 0.421275 Tokens per Sec: 516.697693
-+      Epoch Step: 1 Loss: 0.141797 Tokens per Sec: 760.352417
-+      Epoch 9: tensor(0.1675, grad_fn=<DivBackward0>)
-+      training done
++      Epoch Step: 1 Loss: 1.903320 Tokens per Sec: 805.217590
++      Epoch Step: 1 Loss: 1.675429 Tokens per Sec: 1521.995483
++      Epoch 1: tensor(1.6866, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.866234 Tokens per Sec: 912.682617
++      Epoch Step: 1 Loss: 1.452893 Tokens per Sec: 1617.763672
++      Epoch 2: tensor(1.3933, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.653421 Tokens per Sec: 836.391602
++      Epoch Step: 1 Loss: 1.023309 Tokens per Sec: 1672.781372
++      Epoch 3: tensor(1.0237, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.297126 Tokens per Sec: 890.129639
++      Epoch Step: 1 Loss: 0.684528 Tokens per Sec: 1566.112305
++      Epoch 4: tensor(0.6474, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.075492 Tokens per Sec: 915.776917
++      Epoch Step: 1 Loss: 0.451136 Tokens per Sec: 1742.930420
++      Epoch 5: tensor(0.4312, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 0.840622 Tokens per Sec: 951.246338
++      Epoch Step: 1 Loss: 0.300754 Tokens per Sec: 1759.965454
++      Epoch 6: tensor(0.2834, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 0.516217 Tokens per Sec: 905.040710
++      Epoch Step: 1 Loss: 0.315101 Tokens per Sec: 1593.831787
++      Epoch 7: tensor(0.2525, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 1.087026 Tokens per Sec: 939.654419
++      Epoch Step: 1 Loss: 0.307026 Tokens per Sec: 1557.088745
++      Epoch 8: tensor(0.2855, grad_fn=<DivBackward0>)
++      Epoch Step: 1 Loss: 0.457826 Tokens per Sec: 926.772766
++      Epoch Step: 1 Loss: 0.189399 Tokens per Sec: 1403.400513
++      Epoch 9: tensor(0.1794, grad_fn=<DivBackward0>)
 
 ## deleted /cells/83/outputs/0:
 -  output:
@@ -526,7 +525,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 -      0.27331129014492034
 
 ## modified /cells/83/source:
-@@ -1,14 +1,17 @@
+@@ -1,14 +1,15 @@
  # Train the simple copy task.
  V = 11
 +N = 10
@@ -546,8 +545,6 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 
 +    print("Epoch %d: %s" % (epoch, run_epoch(data_gen(V, 30, 5), model, 
 +                    SimpleLossCompute(model.generator, criterion, None))))
-+
-+print('training done')
 
 
 ## replaced /cells/85/execution_count:
@@ -605,7 +602,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +      Loading data...
 
 ## modified /cells/89/source:
-@@ -1,11 +1,11 @@
+@@ -1,6 +1,6 @@
  # For data loading.
  from torchtext import data, datasets
 -
@@ -613,12 +610,6 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
  if True:
      import spacy
      spacy_de = spacy.load('de')
-     spacy_en = spacy.load('en')
--
-+    
-     def tokenize_de(text):
-         return [tok.text for tok in spacy_de.tokenizer(text)]
- 
 
 ## replaced /cells/92/execution_count:
 -  36
@@ -634,6 +625,21 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 ## deleted /cells/94/metadata/collapsed:
 -  True
 
+## modified /cells/94/source:
+@@ -38,8 +38,10 @@ class MultiGPULossCompute:
+             # Sum and normalize loss
+             l = nn.parallel.gather(loss, 
+                                    target_device=self.devices[0])
+-            l = l.sum()[0] / normalize
+-            total += l.data[0]
++            #l = l.sum()[0] / normalize
++            #total += l.data[0]
++            l = l.sum() / normalize
++            total += l
+ 
+             # Backprop loss to output of transformer
+             if self.opt is not None:
+
 ## replaced /cells/96/execution_count:
 -  43
 +  42
@@ -642,24 +648,26 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 -  True
 
 ## modified /cells/96/source:
-@@ -1,5 +1,5 @@
+@@ -1,16 +1,17 @@
 -# GPUs to use
 -devices = [0, 1, 2, 3]
-+#devices = [0, 1, 2, 3]
-+devices = list(range(torch.cuda.device_count()))
++exclude_devices = []
++devices = [i for i in range(torch.cuda.device_count()) if i not in exclude_devices]
  if True:
      pad_idx = TGT.vocab.stoi["<blank>"]
      model = make_model(len(SRC.vocab), len(TGT.vocab), N=6)
-@@ -7,10 +7,10 @@ if True:
+     model.cuda()
      criterion = LabelSmoothing(size=len(TGT.vocab), padding_idx=pad_idx, smoothing=0.1)
      criterion.cuda()
-     BATCH_SIZE = 12000
+-    BATCH_SIZE = 12000
 -    train_iter = MyIterator(train, batch_size=BATCH_SIZE, device=0,
-+    train_iter = MyIterator(train, batch_size=BATCH_SIZE, device=torch.device('cuda:0'),
++    BATCH_SIZE = 4096
++    device = torch.device('cuda:{}'.format(devices[0]))
++    train_iter = MyIterator(train, batch_size=BATCH_SIZE, device=device,
                              repeat=False, sort_key=lambda x: (len(x.src), len(x.trg)),
                              batch_size_fn=batch_size_fn, train=True)
 -    valid_iter = MyIterator(val, batch_size=BATCH_SIZE, device=0,
-+    valid_iter = MyIterator(val, batch_size=BATCH_SIZE, device=torch.device('cuda:0'),
++    valid_iter = MyIterator(val, batch_size=BATCH_SIZE, device=device,
                              repeat=False, sort_key=lambda x: (len(x.src), len(x.trg)),
                              batch_size_fn=batch_size_fn, train=False)
      model_par = nn.DataParallel(model, device_ids=devices)
@@ -675,20 +683,22 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 -  True
 
 ## modified /cells/100/source:
-@@ -1,3 +1,4 @@
+@@ -1,4 +1,6 @@
 +# Turn on to retrain model:
  if False:
++    torch.cuda.empty_cache()
      model_opt = NoamOpt(model.src_embed[0].d_model, 1, 2000,
              torch.optim.Adam(model.parameters(), lr=0, betas=(0.9, 0.98), eps=1e-9))
+     for epoch in range(10):
 
 ## inserted before /cells/102/outputs/0:
 +  output:
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Source:	Es kostet �brigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen . 
-+      Translation:	It costs 300 dollars to actually study the neurologic section in the neurological record . 
-+      Target:	Takes about $ 300 , by the way , in the neurologist 's clinic to do it . 
++      Source:	Jedoch muss man für die Selbstbestimmung heute kämpfen . 
++      Translation:	But you have to fight for your own self - firmly today . 
++      Target:	But you have to fight for your self - determination today . 
 
 ## deleted /cells/102/outputs/0:
 -  output:
@@ -802,22 +812,22 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +    output_type: stream
 +    name: stdout
 +    text:
-+      Translation:	<s> It costs 300 dollars to actually study the neurologic section in the neurological record . 
++      Translation:	<s> It costs 300 dollars , by the way , to look at the park . 
 
 ## deleted /cells/118/outputs/0:
 -  output:
 -    output_type: stream
 -    name: stdout
 -    text:
--      Translation:	<s> \u2581Die \u2581Protokoll datei \u2581kann \u2581 heimlich \u2581per \u2581E - Mail \u2581oder \u2581FTP \u2581an \u2581einen \u2581bestimmte n \u2581Empf�nger \u2581gesendet \u2581werden . 
+-      Translation:	<s> ▁Die ▁Protokoll datei ▁kann ▁ heimlich ▁per ▁E - Mail ▁oder ▁FTP ▁an ▁einen ▁bestimmte n ▁Empfänger ▁gesendet ▁werden . 
 
 ## modified /cells/118/source:
 @@ -1,14 +1,16 @@
  model.eval()
--sent = "\u2581The \u2581log \u2581file \u2581can \u2581be \u2581sent \u2581secret ly \u2581with \u2581email \u2581or \u2581FTP \u2581to \u2581a \u2581specified \u2581receiver".split()
+-sent = "▁The ▁log ▁file ▁can ▁be ▁sent ▁secret ly ▁with ▁email ▁or ▁FTP ▁to ▁a ▁specified ▁receiver".split()
 -src = torch.LongTensor([[SRC.stoi[w] for w in sent]])
-+#sent = "\u2581The \u2581log \u2581file \u2581can \u2581be \u2581sent \u2581secret ly \u2581with \u2581email \u2581or \u2581FTP \u2581to \u2581a \u2581specified \u2581receiver".split()
-+sent = "Es kostet �brigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen .".split()
++#sent = "▁The ▁log ▁file ▁can ▁be ▁sent ▁secret ly ▁with ▁email ▁or ▁FTP ▁to ▁a ▁specified ▁receiver".split()
++sent = "Es kostet übrigens 300 $ , sich in der neurologischen Abteilung untersuchen zu lassen .".split()
 +src = torch.LongTensor([[SRC.vocab.stoi[w] for w in sent]])
 +#print(src)
  src = Variable(src)
@@ -845,7 +855,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=042b78c4a3180ea2...>
++      image/png: iVBORw0K...<snip base64, md5=8cd0a05e425a2753...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -861,7 +871,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=de2ff377b5a11a1b...>
++      image/png: iVBORw0K...<snip base64, md5=7068926e9bf16624...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -877,7 +887,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=2dcfbf14a33c3023...>
++      image/png: iVBORw0K...<snip base64, md5=e3d0c1fda3d7f1d6...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -893,7 +903,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=c53ce71e416d8c50...>
++      image/png: iVBORw0K...<snip base64, md5=f185d898b3e3621e...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -909,7 +919,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=f60229aa7ac529f0...>
++      image/png: iVBORw0K...<snip base64, md5=41352adb0636a5f6...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -925,7 +935,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=77b3844359bf7711...>
++      image/png: iVBORw0K...<snip base64, md5=5c1ba038d68ba5d4...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -941,7 +951,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=d90d68339a3cd29c...>
++      image/png: iVBORw0K...<snip base64, md5=6fa3e8849abf4863...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -957,7 +967,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=64566ef405bc3e01...>
++      image/png: iVBORw0K...<snip base64, md5=1df043eaf3488669...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
@@ -973,7 +983,7 @@ nbdiff annotated_transformer_original.ipynb annotated_transformer.ipynb
 +  output:
 +    output_type: display_data
 +    data:
-+      image/png: iVBORw0K...<snip base64, md5=bd49c1405b66f0e0...>
++      image/png: iVBORw0K...<snip base64, md5=67f82de82f383e47...>
 +      text/plain: <Figure size 1440x720 with 4 Axes>
 +    metadata (unknown keys):
 +      needs_background: light
